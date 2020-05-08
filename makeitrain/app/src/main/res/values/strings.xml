@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">makeitrain</string>
+    <string name="uhave">You Have:</string>
+    <string name="dollar">$0</string>
+    <string name="mir">Make it Rain</string>
+    <string name="st">Show Tag</string>
+</resources>
