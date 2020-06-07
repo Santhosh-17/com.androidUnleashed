@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/h1"
+        android:title="@string/ic_home" />
+    <item
+        android:id="@+id/what"
+        android:icon="@drawable/what"
+        android:title="@string/ic_what" />
+    <item
+        android:id="@+id/prevent"
+        android:icon="@drawable/p1"
+        android:title="@string/ic_prevention" />
+    <item
+        android:id="@+id/sym"
+        android:icon="@drawable/s1"
+        android:title="@string/ic_symptoms" />
+    <item
+        android:id="@+id/toll"
+        android:icon="@drawable/tf1"
+        android:title="@string/ic_toll_free" />
+
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/a1"
+        android:title="@string/ic_about" />
+
+
+</menu>

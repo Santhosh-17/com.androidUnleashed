@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/sym">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/title"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true" />
+
+            <com.codesgood.views.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st1"
+                android:textStyle="bold"
+                android:typeface="sans"
+                android:textSize="20dp"
+                android:textColor="@color/title"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st2"
+                android:textStyle="normal"
+                android:typeface="sans"
+                android:textSize="20dp"
+                android:textColor="@android:color/white"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st3"
+                android:textStyle="bold"
+                android:typeface="sans"
+                android:textSize="20dp"
+                android:textColor="@color/title"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st4"
+                android:textStyle="normal"
+                android:typeface="sans"
+                android:textSize="20dp"
+                android:textColor="@android:color/white"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st5"
+                android:textStyle="bold"
+                android:typeface="sans"
+                android:textSize="20dp"
+                android:textColor="@color/title"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st6"
+                android:textStyle="normal"
+                android:typeface="sans"
+                android:textSize="20dp"
+                android:textColor="@android:color/white"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st7"
+                android:textStyle="bold"
+                android:typeface="sans"
+                android:textSize="20dp"
+                android:textColor="@color/title"/>
+
+            <com.codesgood.views.JustifiedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st8"
+                android:textStyle="normal"
+                android:typeface="sans"
+                android:textSize="20dp"
+                android:textColor="@android:color/white"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/last"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

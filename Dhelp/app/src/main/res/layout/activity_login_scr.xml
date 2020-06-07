@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".LoginScr">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center" />
+
+        <EditText
+            android:id="@+id/usernamelg"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:inputType="textEmailAddress"
+            android:hint="@string/username_lg"
+            android:textColorHint="@android:color/white"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/mail"
+            android:drawablePadding="10dp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/editt"
+            android:padding="20dp"
+            android:importantForAutofill="no"
+            android:drawableStart="@drawable/person" />
+
+        <EditText
+            android:id="@+id/passwdlg"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:inputType="textPassword"
+            android:textColor="@android:color/white"
+            android:hint="@string/password_lg"
+            android:textColorHint="@android:color/white"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/editt"
+            android:padding="20dp"
+            android:drawableStart="@drawable/ic_lock_outline_black_24dp"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forget_password"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="18sp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="right"
+            android:layout_marginEnd="35dp" tools:targetApi="jelly_bean" />
+
+        <Button
+            android:id="@+id/loginlg"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:text="@string/login_ed"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/bg"
+            android:background="@drawable/btn_bg" />
+
+        <TextView
+            android:id="@+id/dha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have account? Sign Up"
+            android:textSize="18sp"
+            android:layout_marginTop="14sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center" />
+
+
+    </LinearLayout>
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressbar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

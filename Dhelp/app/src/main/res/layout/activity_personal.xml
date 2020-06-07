@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".Personal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    Personal Pass    "
+            android:textColor="@color/bg"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_bg"
+            android:textSize="24sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:layout_marginTop="25sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Applicant Name"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="50sp"
+            android:layout_marginStart="30sp" />
+
+        <EditText
+            android:id="@+id/an3"
+            android:layout_width="310dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/editt"
+            android:drawablePadding="10dp"
+            android:inputType="textPersonName"
+            android:padding="20dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:layout_marginStart="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Number"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="30sp" />
+
+        <EditText
+            android:id="@+id/cn3"
+            android:layout_width="310dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/editt"
+            android:drawablePadding="10dp"
+            android:inputType="phone"
+            android:padding="20dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:layout_marginStart="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="30sp" />
+
+        <EditText
+            android:id="@+id/ag3"
+            android:layout_width="310dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/editt"
+            android:drawablePadding="10dp"
+            android:inputType="number"
+            android:padding="20dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:layout_marginStart="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Address"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="30sp" />
+
+        <EditText
+            android:id="@+id/ca3"
+            android:layout_width="310dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/editt"
+            android:drawablePadding="10dp"
+            android:inputType="textMultiLine"
+            android:padding="20dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:layout_marginStart="30sp" />
+
+
+
+        <Button
+            android:id="@+id/s3"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:text="Submit"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="25dp"
+            android:textColor="@color/bg"
+            android:background="@drawable/btn_bg" />
+
+
+    </LinearLayout>
+
+</ScrollView>
