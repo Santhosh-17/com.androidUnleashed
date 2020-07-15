@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Trivia</string>
+    <string name="have_a_great_year_ahead_and_i_have_this_only_you_have_to_be_strong_and_my_soul_have_to_be_freee">Have a great year ahead and i have this only you have to be strong and my soul have to be freee</string>
+    <string name="trueText">True</string>
+    <string name="falseText">False</string>
+    <string name="counter">0 off 100</string>
+    <string name="crt">Correct</string>
+    <string name="inCrt">Incorrect</string>
 </resources>

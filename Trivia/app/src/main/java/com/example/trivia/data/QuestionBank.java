@@ -44,6 +44,6 @@ public class QuestionBank {
         });
 
         AppController.getInstance().addToRequestQueue(jsonArrayRequest);
-        return null;
+        return questionArrayList;
     }
 }
