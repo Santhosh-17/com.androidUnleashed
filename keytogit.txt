@@ -1,0 +1,182 @@
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git init
+Initialized empty Git repository in /home/santhosh/Videos/.git/
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git add ShowName
+warning: CRLF will be replaced by LF in ShowName/gradlew.bat.
+The file will have its original line endings in your working directory.
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git commit -m "my #1 android application"
+[master (root-commit) 955a970] my #1 android application
+ 44 files changed, 862 insertions(+)
+ create mode 100644 ShowName/.gitignore
+ create mode 100644 ShowName/.idea/codeStyles/Project.xml
+ create mode 100644 ShowName/.idea/gradle.xml
+ create mode 100644 ShowName/.idea/misc.xml
+ create mode 100644 ShowName/.idea/runConfigurations.xml
+ create mode 100644 ShowName/.idea/vcs.xml
+ create mode 100644 ShowName/app/.gitignore
+ create mode 100644 ShowName/app/build.gradle
+ create mode 100644 ShowName/app/proguard-rules.pro
+ create mode 100644 ShowName/app/src/androidTest/java/com/example/showname/ExampleInstrumentedTest.java
+ create mode 100644 ShowName/app/src/main/AndroidManifest.xml
+ create mode 100644 ShowName/app/src/main/ic_launcher-web.png
+ create mode 100644 ShowName/app/src/main/java/com/example/showname/MainActivity.java
+ create mode 100644 ShowName/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+ create mode 100644 ShowName/app/src/main/res/drawable/ic_launcher_background.xml
+ create mode 100644 ShowName/app/src/main/res/layout/activity_main.xml
+ create mode 100644 ShowName/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+ create mode 100644 ShowName/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+ create mode 100644 ShowName/app/src/main/res/mipmap-hdpi/ic_launcher.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-hdpi/ic_launcher_round.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-mdpi/ic_launcher.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-mdpi/ic_launcher_round.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+ create mode 100644 ShowName/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+ create mode 100644 ShowName/app/src/main/res/values/colors.xml
+ create mode 100644 ShowName/app/src/main/res/values/strings.xml
+ create mode 100644 ShowName/app/src/main/res/values/styles.xml
+ create mode 100644 ShowName/app/src/test/java/com/example/showname/ExampleUnitTest.java
+ create mode 100644 ShowName/build.gradle
+ create mode 100644 ShowName/gradle.properties
+ create mode 100644 ShowName/gradle/wrapper/gradle-wrapper.jar
+ create mode 100644 ShowName/gradle/wrapper/gradle-wrapper.properties
+ create mode 100755 ShowName/gradlew
+ create mode 100644 ShowName/gradlew.bat
+ create mode 100644 ShowName/settings.gradle
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git remote add sn https://github.com/santhosh2401/com.androidUnleashed.git
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git push -u sn master
+Username for 'https://github.com': santhosh2401
+Password for 'https://santhosh2401@github.com': 
+To https://github.com/santhosh2401/com.androidUnleashed.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/santhosh2401/com.androidUnleashed.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git push  sn master
+Username for 'https://github.com': santhosh2401
+Password for 'https://santhosh2401@github.com': 
+To https://github.com/santhosh2401/com.androidUnleashed.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/santhosh2401/com.androidUnleashed.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=sn/<branch> master
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git branch --set-upstream-to=sn/master master
+error: the requested upstream branch 'sn/master' does not exist
+hint: 
+hint: If you are planning on basing your work on an upstream
+hint: branch that already exists at the remote, you may need to
+hint: run "git fetch" to retrieve it.
+hint: 
+hint: If you are planning to push out a new local branch that
+hint: will track its remote counterpart, you may want to use
+hint: "git push -u" to set the upstream config as you push.
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git fetch
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git branch --set-upstream-to=sn/master master
+error: the requested upstream branch 'sn/master' does not exist
+hint: 
+hint: If you are planning on basing your work on an upstream
+hint: branch that already exists at the remote, you may need to
+hint: run "git fetch" to retrieve it.
+hint: 
+hint: If you are planning to push out a new local branch that
+hint: will track its remote counterpart, you may want to use
+hint: "git push -u" to set the upstream config as you push.
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=sn/<branch> master
+
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git pull https://github.com/santhosh2401/com.androidUnleashed.git master
+warning: no common commits
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (9/9), done.
+From https://github.com/santhosh2401/com.androidUnleashed
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git clone https://github.com/santhosh2401/com.androidUnleashed.git
+Cloning into 'com.androidUnleashed'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (9/9), done.
+
+
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git pull https://github.com/santhosh2401/com.androidUnleashed.git master
+From https://github.com/santhosh2401/com.androidUnleashed
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git pull origin master --allow-unrelated-histories
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git pull sn  master --allow-unrelated-histories
+From https://github.com/santhosh2401/com.androidUnleashed
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> sn/master
+Merge made by the 'recursive' strategy.
+ LICENSE   | 674 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.md |   1 +
+ 2 files changed, 675 insertions(+)
+ create mode 100644 LICENSE
+ create mode 100644 README.md
+
+
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git pull https://github.com/santhosh2401/com.androidUnleashed.git master
+From https://github.com/santhosh2401/com.androidUnleashed
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ git push  sn master
+Username for 'https://github.com': santhosh2401
+Password for 'https://santhosh2401@github.com': 
+Counting objects: 80, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (61/61), done.
+Writing objects: 100% (80/80), 301.14 KiB | 12.55 MiB/s, done.
+Total 80 (delta 0), reused 0 (delta 0)
+To https://github.com/santhosh2401/com.androidUnleashed.git
+   322be6d..922a590  master -> master
+
+
+santhosh@santhosh-Lenovo-E41-25:~/Videos$ 
+
