@@ -6,4 +6,5 @@
     <string name="counter">0 off 100</string>
     <string name="crt">Correct</string>
     <string name="inCrt">Incorrect</string>
+    <string name="trivia">TRIVIA</string>
 </resources>
