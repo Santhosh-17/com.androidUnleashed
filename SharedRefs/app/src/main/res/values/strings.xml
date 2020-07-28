@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SharedRefs</string>
+    <string name="sharedpreferences">SharedPreferences</string>
+    <string name="tester">Tester</string>
+    <string name="msg">Msg Saved!</string>
+    <string name="enter_some_text">Enter some text</string>
+    <string name="submit">Submit</string>
+</resources>

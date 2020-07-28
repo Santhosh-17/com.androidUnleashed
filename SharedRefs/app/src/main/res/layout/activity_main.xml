@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:santhosh="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    santhosh:layout_width="match_parent"
+    santhosh:layout_height="match_parent"
+    santhosh:background="@color/bg"
+    tools:context=".MainActivity">
+
+    <TextView
+        santhosh:id="@+id/title1"
+        santhosh:layout_width="wrap_content"
+        santhosh:layout_height="wrap_content"
+        santhosh:layout_centerHorizontal="true"
+        santhosh:layout_marginTop="120dp"
+        santhosh:text="@string/sharedpreferences"
+        santhosh:textSize="24dp"
+        santhosh:textColor="@android:color/black"
+        app:fontFamily="@font/faster_one" />
+
+    <TextView
+
+        santhosh:layout_width="wrap_content"
+        santhosh:layout_height="wrap_content"
+        santhosh:layout_centerHorizontal="true"
+        santhosh:text="@string/tester"
+        santhosh:layout_below="@id/title1"
+        santhosh:textSize="24dp"
+        santhosh:textColor="@android:color/black"
+        app:fontFamily="@font/faster_one" />
+
+    <EditText
+        santhosh:id="@+id/editText"
+        santhosh:layout_width="250dp"
+        santhosh:layout_height="wrap_content"
+        santhosh:layout_centerInParent="true"
+        santhosh:layout_centerHorizontal="true"
+        santhosh:padding="15dp"
+        santhosh:textColor="@android:color/white"
+        santhosh:textColorHint="@android:color/white"
+        santhosh:background="@drawable/bg"
+        santhosh:hint="@string/enter_some_text" />
+
+    <TextView
+        santhosh:id="@+id/textView"
+        santhosh:layout_width="wrap_content"
+        santhosh:layout_height="wrap_content"
+        santhosh:layout_centerHorizontal="true"
+        santhosh:textColor="@android:color/white"
+        santhosh:layout_marginTop="40dp"
+        santhosh:layout_below="@id/editText"/>
+
+    <Button
+        santhosh:id="@+id/submit"
+        santhosh:layout_width="120dp"
+        santhosh:layout_height="wrap_content"
+        santhosh:text="@string/submit"
+        santhosh:textSize="16dp"
+        santhosh:textStyle="bold"
+        santhosh:background="@drawable/bbg"
+        santhosh:layout_centerHorizontal="true"
+        santhosh:layout_marginTop="40dp"
+        santhosh:layout_below="@id/textView"
+        santhosh:elevation="100dp"/>
+
+</RelativeLayout>
