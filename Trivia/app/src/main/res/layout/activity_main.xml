@@ -8,6 +8,7 @@
     android:background="@drawable/bg"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -20,10 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
-
-
-
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/counter"
@@ -42,7 +40,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="328dp"
-        android:layout_height="198dp"
+        android:layout_height="212dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="10dp"
@@ -52,7 +50,7 @@
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.214"
+        app:layout_constraintVertical_bias="0.254"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp">
@@ -63,15 +61,15 @@
 
             <TextView
                 android:id="@+id/textField"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:padding="20dp"
-                android:textAlignment="center"
+                android:paddingLeft="5dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
                 android:text="@string/have_a_great_year_ahead_and_i_have_this_only_you_have_to_be_strong_and_my_soul_have_to_be_freee"
+                android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="24sp" />
 
@@ -96,7 +94,9 @@
             android:layout_height="40dp"
             android:src="@drawable/prevb"
             android:background="@drawable/card"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="30dp"
+            android:contentDescription="@string/todo"
+            android:layout_marginEnd="30dp" />
 
         <Button
             android:id="@+id/trueButton"
@@ -106,7 +106,8 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:background="@drawable/check"
-            android:layout_marginRight="20sp"/>
+            android:layout_marginRight="20sp"
+            android:layout_marginEnd="20sp" />
 
         <Button
             android:id="@+id/falseButton"
@@ -116,7 +117,8 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:background="@drawable/check"
-            android:layout_marginRight="30sp"/>
+            android:layout_marginRight="30sp"
+            android:layout_marginEnd="30sp" />
 
 
 
@@ -126,10 +128,55 @@
             android:layout_height="40dp"
             android:src="@drawable/nextb"
             android:layout_marginRight="10sp"
-            android:background="@drawable/card"/>
+            android:background="@drawable/card"
+            android:contentDescription="@string/todo"
+            android:layout_marginEnd="10sp" />
 
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cs"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/chewy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.151" />
+
+    <TextView
+        android:id="@+id/highScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hs"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/chewy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:text="@string/check"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
