@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         trueButton.setOnClickListener(this);
         falseButton.setOnClickListener(this);
 
+        currentQuestionIndex = p.getState();
         currentScore.setText("Current Score: "+s.getScore());
         highScore.setText("Highest Score: "+p.getHighScore());
 
@@ -113,13 +114,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             fadeView();
             addScore();
-            toastMessageId = R.string.crt;
+        //    toastMessageId = R.string.crt;
             msg.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check_circle_black_24dp, 0, 0, 0);
             msg.setText(" Correct");
         } else {
             shakeAnimation();
             subScore();
-            toastMessageId = R.string.inCrt;
+       //     toastMessageId = R.string.inCrt;
             msg.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_incorrect, 0, 0, 0);
             msg.setText(" Incorrect");
         }
@@ -218,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPause() {
         p.saveHighScore(s.getScore());
-      //  prefs.setState(currentQuestionIndex);
+        p.setState(currentQuestionIndex);
         super.onPause();
     }
 
@@ -228,4 +229,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         msg.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
         msg.setText(" ");
     }
+
+
 }
