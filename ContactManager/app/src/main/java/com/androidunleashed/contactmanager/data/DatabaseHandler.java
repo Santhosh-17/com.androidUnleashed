@@ -5,12 +5,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
 import com.androidunleashed.contactmanager.R;
 import com.androidunleashed.contactmanager.model.Contacts;
 import com.androidunleashed.contactmanager.util.Util;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
@@ -58,6 +62,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         //INSERT A ROW
         db.insert(Util.TABLE_NAME,null,contentValues);
+        Log.d("dbHandler", "addContact: "+"itemAdded");
         db.close();
 
     }
@@ -83,6 +88,39 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         contacts.setPhoneNumber(cursor.getString(2));
 
         return contacts;
+    }
+
+
+    //TO GET ALL CONTACTS
+    public List<Contacts> getAllContacta(){
+
+        List<Contacts> contactsList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        //SELECT ALL CONTACTS
+        String selectAll = "SELECT * FROM "+Util.TABLE_NAME;
+        Cursor cursor = db.rawQuery(selectAll,null);
+
+        //LOOP THROUGH OUR DATA
+        if (cursor.moveToFirst()){
+
+            do {
+
+                Contacts contacts = new Contacts();
+                contacts.setId(Integer.parseInt(cursor.getString(0)));
+                contacts.setName(cursor.getString(1));
+                contacts.setPhoneNumber(cursor.getString(2));
+
+                //ADD CONTACT OBJECT TO CONTACT_LIST
+                contactsList.add(contacts);
+
+
+
+            }while (cursor.moveToNext());
+
+        }
+
+        return contactsList;
     }
 
 }
