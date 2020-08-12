@@ -1,12 +1,15 @@
 package com.androidunleashed.contactmanager.data;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
 import com.androidunleashed.contactmanager.R;
+import com.androidunleashed.contactmanager.model.Contacts;
 import com.androidunleashed.contactmanager.util.Util;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
@@ -23,7 +26,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         
         // ; HERE
         
-        String CREATE_TABLE = "CREATE TABLE "+Util.DATABASE_NAME+" ( "+ Util.KEY_ID+" INTEGER PRIMARY KEY, "+Util.KEY_NAME+" TEXT, "+Util.KEY_PHONENO +" TEXT ); " ;
+        String CREATE_TABLE = "CREATE TABLE "+Util.TABLE_NAME+" ( "+ Util.KEY_ID+" INTEGER PRIMARY KEY, "+Util.KEY_NAME+" TEXT, "+Util.KEY_PHONENO +" TEXT ); " ;
         db.execSQL(CREATE_TABLE);
         
 
@@ -40,4 +43,46 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
 
     }
+
+
+    //CRUD - CREATE, READ ,UPDATE, DELETE
+
+    //ADD CONTACTS
+    public void addContact(Contacts contacts){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Util.KEY_NAME, contacts.getName());
+        contentValues.put(Util.KEY_PHONENO,contacts.getPhoneNumber());
+
+        //INSERT A ROW
+        db.insert(Util.TABLE_NAME,null,contentValues);
+        db.close();
+
+    }
+
+    //TO GET CONTACTS FROM DATABASE
+
+    public Contacts getContact(int id){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(Util.TABLE_NAME,
+                new String[]{Util.KEY_ID,Util.KEY_NAME,Util.KEY_PHONENO}, // LIST OF COLUMNS
+                Util.KEY_ID+"=?",new String[]{String.valueOf(id)}, // SAME AS CONDITIONS
+                null,null,null);
+
+        if(cursor != null){
+            cursor.moveToFirst();  //IF CURSOR IS IN MIDDLE  OF TABLE
+        }
+
+        Contacts contacts = new Contacts();
+        contacts.setId(Integer.parseInt(cursor.getString(0)));
+        contacts.setName(cursor.getString(1));
+        contacts.setPhoneNumber(cursor.getString(2));
+
+        return contacts;
+    }
+
 }
