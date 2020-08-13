@@ -94,6 +94,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return contacts;
     }
 
+    public int update(Contacts contacts){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Util.KEY_NAME, contacts.getName());
+        contentValues.put(Util.KEY_PHONENO,contacts.getPhoneNumber());
+
+        //UPDATE THE ROW
+        //UPDATE(TABLE_NAME,VALUES, WHERE KEY_ID = ID)
+        return db.update(Util.TABLE_NAME,contentValues,Util.KEY_ID+"=?",
+                new String[]{String.valueOf(contacts.getId())});
+
+    }
+
 
     //TO GET ALL CONTACTS
     public List<Contacts> getAllContacta(){

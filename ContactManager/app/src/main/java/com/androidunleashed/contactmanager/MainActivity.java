@@ -23,19 +23,36 @@ public class MainActivity extends AppCompatActivity {
 
         DatabaseHandler db = new DatabaseHandler(MainActivity.this);
 
+
         //CREATE CONTACTS OBJECT
         Contacts sandy = new Contacts();
         sandy.setName("sandy");
-        sandy.setPhoneNumber("4564564566");
+        sandy.setPhoneNumber("98798787");
 
-        db.addContact(sandy);
+    //    db.addContact(sandy);
 
         List<Contacts> contactsList = db.getAllContacta();
-
+        t1.append("Saved Contacts:\n");
         for(Contacts c : contactsList){
            // Log.d("Main", "onCreate: "+c.getId()+" "+c.getName());
             t1.append(c.getId()+". "+c.getName()+" "+c.getPhoneNumber()+"\n");
         }
+
+        Contacts cm = db.getContact(3);
+        t1.append("\nGot Contacts:\n"+"Id: "+cm.getId()+"\n"+"Name: "+cm.getName()+"\nPhone: "+cm.getPhoneNumber());
+
+        Contacts cm1 = db.getContact(2);
+        cm1.setName("santhosh");
+        cm1.setPhoneNumber("0000000000");
+        int rw = db.update(cm1);
+
+        List<Contacts> contactsList1 = db.getAllContacta();
+        t1.append("\n\nAfter Update:\n");
+        for(Contacts c : contactsList1){
+            // Log.d("Main", "onCreate: "+c.getId()+" "+c.getName());
+            t1.append(c.getId()+". "+c.getName()+" "+c.getPhoneNumber()+"\n");
+        }
+
 
     }
 }
