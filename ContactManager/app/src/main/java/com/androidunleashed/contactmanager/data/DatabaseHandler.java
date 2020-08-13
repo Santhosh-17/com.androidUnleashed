@@ -6,9 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.androidunleashed.contactmanager.MainActivity;
 import com.androidunleashed.contactmanager.R;
 import com.androidunleashed.contactmanager.model.Contacts;
 import com.androidunleashed.contactmanager.util.Util;
@@ -54,6 +56,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     //ADD CONTACTS
     public void addContact(Contacts contacts){
 
+
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
@@ -62,7 +65,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         //INSERT A ROW
         db.insert(Util.TABLE_NAME,null,contentValues);
-        Log.d("dbHandler", "addContact: "+"itemAdded");
+        Log.d("db", "addContact: "+"itemAdded");
+
         db.close();
 
     }
