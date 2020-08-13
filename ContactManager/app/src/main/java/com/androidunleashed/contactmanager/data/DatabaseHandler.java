@@ -116,6 +116,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
+    public int getCount(){
+        String cQuery = "SELECT * FROM "+Util.TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(cQuery,null);
+        return cursor.getCount();
+    }
+
     //TO GET ALL CONTACTS
     public List<Contacts> getAllContacta(){
 

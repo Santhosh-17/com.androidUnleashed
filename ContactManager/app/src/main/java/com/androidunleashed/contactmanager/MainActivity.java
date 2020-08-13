@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
             t1.append(c.getId()+". "+c.getName()+" "+c.getPhoneNumber()+"\n");
         }
 
-        Contacts cm = db.getContact(3);
-        t1.append("\nGot Contacts:\n"+"Id: "+cm.getId()+"\n"+"Name: "+cm.getName()+"\nPhone: "+cm.getPhoneNumber());
+        Contacts cm = db.getContact(1);
+        t1.append("\nGot Contacts:\n"+"Id: "+cm.getId()+"\n"+"Name: "+cm.getName()+"\nPhone: "+cm.getPhoneNumber()+"\n\n");
 
       /*  Contacts cm1 = db.getContact(2);
         cm1.setName("santhosh");
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         for(Contacts c : contactsList1){
             // Log.d("Main", "onCreate: "+c.getId()+" "+c.getName());
             t1.append(c.getId()+". "+c.getName()+" "+c.getPhoneNumber()+"\n");
-        } */
+        }
 
 
       //DELETE A CONTACT
@@ -62,8 +62,10 @@ public class MainActivity extends AppCompatActivity {
         for(Contacts c : contactsList1){
             // Log.d("Main", "onCreate: "+c.getId()+" "+c.getName());
             t1.append(c.getId()+". "+c.getName()+" "+c.getPhoneNumber()+"\n");
-        }
+        }*/
 
+      //GET COUNT
+        t1.append("No.of Contacts:\n"+db.getCount());
 
     }
 }
