@@ -10,6 +10,11 @@ public class Contacts {
 
     }
 
+    public Contacts( String name, String phoneNumber) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+    }
+
     public Contacts(int id, String name, String phoneNumber) {
         this.id = id;
         this.name = name;
