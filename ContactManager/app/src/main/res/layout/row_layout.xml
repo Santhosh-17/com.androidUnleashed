@@ -2,22 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_gravity="center"
-        android:layout_width="396dp"
-        android:layout_height="125dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
         app:cardCornerRadius="18dp"
         app:cardElevation="8dp">
 
         <RelativeLayout
             android:padding="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/cname"
@@ -37,8 +37,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 app:srcCompat="@android:drawable/ic_menu_info_details" />
