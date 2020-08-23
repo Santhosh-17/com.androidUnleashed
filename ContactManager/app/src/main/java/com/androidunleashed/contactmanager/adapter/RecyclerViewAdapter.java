@@ -1,6 +1,8 @@
 package com.androidunleashed.contactmanager.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.androidunleashed.contactmanager.FullDetails;
+import com.androidunleashed.contactmanager.MainActivity;
 import com.androidunleashed.contactmanager.R;
 import com.androidunleashed.contactmanager.model.Contacts;
 
@@ -48,16 +52,33 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return contactsList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView cname,cphn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            itemView.setOnClickListener(this);
             cname = itemView.findViewById(R.id.cname);
             cphn = itemView.findViewById(R.id.cnum);
 
+
+        }
+
+        @Override
+        public void onClick(View v) {
+
+            int p = getAdapterPosition();
+
+            Contacts contacts = contactsList.get(p);
+
+            Intent intent = new Intent(context, FullDetails.class);
+            intent.putExtra("cname",contacts.getName());
+            intent.putExtra("phn",contacts.getPhoneNumber());
+            context.startActivity(intent);
+
+            Log.d("name", "onClick: "+contacts.getName());
 
         }
     }
