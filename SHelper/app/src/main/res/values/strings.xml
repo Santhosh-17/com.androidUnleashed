@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">S Helper</string>
+    <string name="app_name1">  S Helper</string>
+    <string name="action_settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="ADD">No items in the List</string>
+    <string name="enteritem">Enter Item Details</string>
+    <string name="hintItem">Enter Item Name</string>
+    <string name="hintQItem">Enter Quantity</string>
+    <string name="hintCItem">Enter Colour (Optional)</string>
+    <string name="hintSItem">Enter Size (Optional)</string>
+    <string name="saveb">save</string>
+</resources>
