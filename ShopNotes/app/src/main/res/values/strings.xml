@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Shop Notes</string>
+    <string name="action_settings">Settings</string>
+    <string name="no_items_in_the_list">No Items in the List!</string>
+    <string name="enteritem">Enter Item Details</string>
+    <string name="saveb">save</string>
+    <string name="itemName">Name</string>
+    <string name="itemQty">Quantity</string>
+</resources>

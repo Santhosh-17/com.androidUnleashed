@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">@android:color/white</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">@android:color/white</color>
+
+    <color name="bg">#5E35B1</color>
+    <color name="ntrl_textinput_default_box_stroke_color" tools:override="true">@android:color/white</color>
+</resources>
