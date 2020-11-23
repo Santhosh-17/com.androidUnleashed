@@ -1,5 +1,6 @@
 package com.androidunleashed.shopnotes;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
 import com.androidunleashed.shopnotes.Data.DataBaseHandler;
@@ -12,10 +13,17 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
         dataBaseHandler = new DataBaseHandler(this);
 
+        Cursor cursor = dataBaseHandler.getAllItems();
+        List<Item> i = show(cursor);
+
+        for(Item item : i){
+            Log.d("Debug", "onCreate: Id: "+item.getId());
+            Log.d("Debug", "onCreate: Item: "+item.getItemName());
+            Log.d("Debug", "onCreate: Qty: "+item.getItemQty());
+            Log.d("Debug", "onCreate: Date: "+item.getDate());
+        }
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +61,55 @@ public class MainActivity extends AppCompatActivity {
 //                        .setAction("Action", null).show();
             }
         });
+    }
+
+    private List<Item> show(Cursor cursor) {
+
+        List<Item> allItems = new ArrayList<>();
+
+        if(cursor.getCount() == 0){
+            Log.d("Debug", "show: Error");
+
+            return allItems;
+        }else {
+
+//            StringBuffer stringBuffer = new StringBuffer();
+            while (cursor.moveToNext()){
+
+//                stringBuffer.append("ID: "+cursor.getString(0)+"\n");
+//                stringBuffer.append("Item Name: "+cursor.getString(1)+"\n");
+//                stringBuffer.append("Item Qty: "+cursor.getString(2)+"\n");
+
+//                        stringBuffer.append("Date: "+cursor.getString(5)+"\n\n");
+
+//                DateFormat dateFormat = DateFormat.getDateInstance();
+//                String formattedDate = dateFormat.format(
+//                        new Date(cursor.getLong(3)).getTime());
+//
+//                stringBuffer.append("Date: "+formattedDate+"\n\n");
+
+
+                Item item = new Item();
+
+                item.setId(Integer.parseInt(cursor.getString(0)));
+                item.setItemName(cursor.getString(1));
+                item.setItemQty(Integer.parseInt(cursor.getString(2)));
+                DateFormat dateFormat = DateFormat.getDateInstance();
+                String formattedDate = dateFormat.format(
+                        new Date(cursor.getLong(3)).getTime());
+                item.setDate(formattedDate);
+
+                allItems.add(item);
+
+            }
+
+//            String temp = stringBuffer.toString();
+//            Log.d("Debug", "show: "+temp);
+
+        }
+
+        return allItems;
+
     }
 
     private void createPopUpDialogue(final View v1) {
@@ -76,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                                 .show();
                     }else{
                         dialog.dismiss();
-                        Snackbar.make(v1, "Item Saved ", Snackbar.LENGTH_LONG)
+                        Snackbar.make(v1, "Item Saved "+r, Snackbar.LENGTH_LONG)
                                 .show();
                     }
 
