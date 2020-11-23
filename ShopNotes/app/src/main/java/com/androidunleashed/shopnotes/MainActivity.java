@@ -1,5 +1,6 @@
 package com.androidunleashed.shopnotes;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
@@ -24,6 +26,7 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -138,13 +141,29 @@ public class MainActivity extends AppCompatActivity {
 
                     long r = saveItem(v,name,qty);
                     if(r == -1){
+
                         dialog.dismiss();
                         Snackbar.make(v1, "Item not Saved ", Snackbar.LENGTH_LONG)
                                 .show();
                     }else{
-                        dialog.dismiss();
-                        Snackbar.make(v1, "Item Saved "+r, Snackbar.LENGTH_LONG)
+
+                        Snackbar.make(v, "Item Saved "+r, Snackbar.LENGTH_LONG)
                                 .show();
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                dialog.dismiss();
+
+                                Intent intent = new Intent(MainActivity.this,ListActivity.class);
+                                startActivity(intent);
+
+                            }
+                        },1200);
+
+
+
                     }
 
                 }else{
