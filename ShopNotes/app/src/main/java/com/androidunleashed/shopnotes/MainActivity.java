@@ -21,20 +21,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     private AlertDialog.Builder builder;
     private AlertDialog dialog;
     private Button SaveButton;
-    DataBaseHandler dataBaseHandler;
-    TextInputEditText ItemName, ItemQty;
+    private DataBaseHandler dataBaseHandler;
+    private TextInputEditText ItemName, ItemQty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,75 +41,24 @@ public class MainActivity extends AppCompatActivity {
 
         dataBaseHandler = new DataBaseHandler(this);
 
-//        Cursor cursor = dataBaseHandler.getAllItems();
-//        List<Item> i = show(cursor);
-
-//        for(Item item : i){
-//            Log.d("Debug", "onCreate: Id: "+item.getId());
-//            Log.d("Debug", "onCreate: Item: "+item.getItemName());
-//            Log.d("Debug", "onCreate: Qty: "+item.getItemQty());
-//            Log.d("Debug", "onCreate: Date: "+item.getDate());
-//        }
+        byPassActivity();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 createPopUpDialogue(view);
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
             }
         });
     }
 
-//    private List<Item> show(Cursor cursor) {
-//
-//        List<Item> allItems = new ArrayList<>();
-//
-//        if(cursor.getCount() == 0){
-//            Log.d("Debug", "show: Error");
-//
-//            return allItems;
-//        }else {
-//
-////            StringBuffer stringBuffer = new StringBuffer();
-//            while (cursor.moveToNext()){
-//
-////                stringBuffer.append("ID: "+cursor.getString(0)+"\n");
-////                stringBuffer.append("Item Name: "+cursor.getString(1)+"\n");
-////                stringBuffer.append("Item Qty: "+cursor.getString(2)+"\n");
-//
-////                        stringBuffer.append("Date: "+cursor.getString(5)+"\n\n");
-//
-////                DateFormat dateFormat = DateFormat.getDateInstance();
-////                String formattedDate = dateFormat.format(
-////                        new Date(cursor.getLong(3)).getTime());
-////
-////                stringBuffer.append("Date: "+formattedDate+"\n\n");
-//
-//
-//                Item item = new Item();
-//
-//                item.setId(Integer.parseInt(cursor.getString(0)));
-//                item.setItemName(cursor.getString(1));
-//                item.setItemQty(Integer.parseInt(cursor.getString(2)));
-//                DateFormat dateFormat = DateFormat.getDateInstance();
-//                String formattedDate = dateFormat.format(
-//                        new Date(cursor.getLong(3)).getTime());
-//                item.setDate(formattedDate);
-//
-//                allItems.add(item);
-//
-//            }
-//
-////            String temp = stringBuffer.toString();
-////            Log.d("Debug", "show: "+temp);
-//
-//        }
-//
-//        return allItems;
-//
-//    }
+    public void byPassActivity() {
+        if (dataBaseHandler.getItemsCount() > 0) {
+            startActivity(new Intent(MainActivity.this, ListActivity.class));
+            finish();
+        }
+    }
+
 
     private void createPopUpDialogue(final View v1) {
 
@@ -137,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 String name = ItemName.getText().toString();
                 String qty = ItemQty.getText().toString();
 
-                if( !name.isEmpty() || !qty.isEmpty() ){
+                if( !name.isEmpty() && !qty.isEmpty() ){
 
                     long r = saveItem(v,name,qty);
                     if(r == -1){
@@ -147,8 +92,7 @@ public class MainActivity extends AppCompatActivity {
                                 .show();
                     }else{
 
-                        Snackbar.make(v, "Item Saved "+r, Snackbar.LENGTH_LONG)
-                                .show();
+                        Toast.makeText(MainActivity.this,"Item Added",Toast.LENGTH_SHORT).show();
 
                         new Handler().postDelayed(new Runnable() {
                             @Override
@@ -157,7 +101,9 @@ public class MainActivity extends AppCompatActivity {
                                 dialog.dismiss();
 
                                 Intent intent = new Intent(MainActivity.this,ListActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
+                                finish();
 
                             }
                         },1200);
@@ -192,29 +138,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-
-            Intent intent = new Intent(MainActivity.this,ListActivity.class);
-            startActivity(intent);
-
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -8,16 +8,14 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="10sp">
+        app:cardElevation="24sp">
 
         <RelativeLayout
             android:background="@drawable/card_bg"
             android:layout_width="match_parent"
             android:padding="15sp"
-
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -28,9 +26,12 @@
 
                 <TextView
                     android:id="@+id/iName"
-                    android:padding="5sp"
+                    android:paddingLeft="5sp"
+                    android:paddingRight="5sp"
+                    android:paddingBottom="15sp"
+                    android:textStyle="bold"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:text="@string/itemName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -38,9 +39,8 @@
                 <TextView
                     android:id="@+id/iQty"
                     android:paddingLeft="5sp"
-                    android:paddingTop="5sp"
                     android:paddingBottom="1sp"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:paddingRight="5sp"
                     android:text="@string/itemQty"
                     android:textColor="@android:color/black"
@@ -53,7 +53,7 @@
                     android:paddingLeft="18sp"
                     android:paddingTop="1sp"
                     android:paddingBottom="5sp"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:paddingRight="5sp"
                     android:text="@string/date"
                     android:textColor="@android:color/black"
@@ -77,17 +77,17 @@
                     android:id="@+id/editButton"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginRight="15dp"
-                    android:background="@android:drawable/ic_menu_edit" />
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_edit" />
 
                 <Button
                     android:id="@+id/deleteButton"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginRight="15dp"
-                    android:background="@android:drawable/ic_delete" />
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_delete" />
 
 
             </TableRow>

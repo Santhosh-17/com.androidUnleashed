@@ -69,5 +69,44 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     }
 
 
+    public int updateItem(Item item) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Constants.NAME,item.getItemName());
+        contentValues.put(Constants.QTY,item.getItemQty());
+        contentValues.put(Constants.DATE,java.lang.System.currentTimeMillis());
+
+
+
+        return db.update(Constants.TABLE_NAME, contentValues,
+                Constants.ID + "=?",
+                new String[]{String.valueOf(item.getId())});
+
+
+    }
+
+    public void deleteItem(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(Constants.TABLE_NAME,
+                Constants.ID + "=?",
+                new String[]{String.valueOf(id)});
+        db.close();
+
+    }
+
+    public int getItemsCount() {
+        String countQuery = "SELECT * FROM " + Constants.TABLE_NAME;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(countQuery, null);
+
+        return cursor.getCount();
+
+    }
+
+
 }
 
