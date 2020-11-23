@@ -6,4 +6,7 @@
     <string name="saveb">save</string>
     <string name="itemName">Name</string>
     <string name="itemQty">Quantity</string>
+    <string name="itemNameS">1. Name</string>
+    <string name="date">date</string>
+    <string name="show">Display</string>
 </resources>

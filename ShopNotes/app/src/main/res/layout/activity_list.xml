@@ -8,6 +8,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:background="@android:color/darker_gray"
+        android:paddingLeft="10sp"
+        android:paddingRight="10sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
